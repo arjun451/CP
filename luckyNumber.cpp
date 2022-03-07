@@ -91,7 +91,6 @@ ll binarySearch(ll arr[], ll l, ll r, ll x)
 //         m1*=i;
 //     return m1/m;
 //    }
- 
 int main() {
     
      
@@ -100,77 +99,23 @@ int main() {
     // freopen("output.txt", "w", stdout);
     // #endif
      
-     int q;
-     cin>>q;
-     int a[200001];
-     int c=0;
-     while(q--)
+     int n;
+     cin>>n;
+     int a[]={4,7,44,47,74,77,444,447,474,477,744,747,774,777};
+     for(int i=0;i<14;i++)
      {
-         int x;
-         cin>>x;
-         if(x==1)
+         if(n>=a[i])
          {
-          int y;
-          cin>>y;
-          a[c]=y;
-          c++;
-          if(c>=2)
-          {
-              int j=c-1;
-              int v=a[j];
-              while(j>0&&a[j-1]>v)
-              {
-               a[j]=a[j-1];
-               j--;
-              }
-              a[j]=v;
-          }
+           if(n%a[i]==0)
+           {
+               cout<<"YES";
+               return 0;
+           }
          }
          else
-         {
-             int y,k;
-             cin>>y>>k;
-             int b=0;
-             if(x==3){
-             while(a[b]<y&&b<c)
-             {
-                 b++;
-             }
-             mxpq pq;
-             while(b<c&&k>0)
-             {
-                 pq.push(a[b]);
-                 b++;
-                 k--;
-             }
-             if(k==0)
-             cout<<pq.top()<<endl;
-             else
-             cout<<"-1"<<endl;
-             }
-             else
-             {
-                 b=c-1;
-                 while(a[b]>=y&&b>=0)
-                 b--;
-                 if(b==-1)
-                 cout<<b<<endl;
-                 else
-                 {
-                     priority_queue<int ,vector<int>,greater<int>> p;
-                     while(b>=0&&k>0)
-                     {
-                         p.push(a[b]);
-                         b--;k--;
-                     }
-                     if(k==0)
-                     cout<<p.top()<<endl;
-                     else
-                     cout<<"-1"<<endl;
-                 }
-             }
-         }
+         break;
      }
+     cout<<"NO";
 
 
   return 0;
