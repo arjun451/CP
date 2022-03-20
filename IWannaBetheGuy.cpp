@@ -99,26 +99,20 @@ int main() {
     // freopen("output.txt", "w", stdout);
     // #endif
      
-     int n;
-     cin>>n;
-     int p;
-     cin>>p;
-     uset<int> s;
-     for(int i=0;i<p;i++)
-     {
-         int x;
-         cin>>x;
-         s.insert(x);
-     }
-     for(int i=0;i<p;i++)
-     {
-         int x;
-         cin>>x;
-         s.insert(x);
-     }
-     if(s.size()==n)
-     cout<<"I become the guy.";
-     else
-     cout<<"Oh, my keyboard!";
+      int t;
+      cin>>t;
+      while(t--)
+      {
+          int n;
+          cin>>n;
+          int a[n];
+          fo(i,0,n)
+          {
+              cin>>a[i];
+          }
+          
+          sort(a,a+n);
+          cout<<a[n-1]+a[n-2]<<endl;
+      }
   return 0;
 }
