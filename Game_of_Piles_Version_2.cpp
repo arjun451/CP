@@ -105,25 +105,18 @@ int main() {
      {
         int n;
         cin>>n;
-       int a[n],t=1;
+       int a[n];
        fo(i,0,n)
        {
         cin>>a[i];
        }
-       int s=0;
+        ll s=0;
        fo(i,0,n)
        {
-        if(a[i]==1)
-        {
-           t=-1;
-           break;
-        }
-        else
-        {
-            s+=a[i]-2;
-        }
+        
+            s+=a[i]-1;
        }
-       if(t==-1||s%2!=0)
+       if(s%2!=0)
        cout<<"CHEF"<<endl;
        else
        {

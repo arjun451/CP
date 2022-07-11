@@ -99,39 +99,40 @@ int main() {
     // freopen("output.txt", "w", stdout);
     // #endif
      
-     int T;
-     cin>>T;
-     while ( T--)
+     int n,T=1;
+     cin>>n;
+     string arr[n];
+     fo(i,0,n)
      {
-        int n;
-        cin>>n;
-       int a[n],t=1;
-       fo(i,0,n)
-       {
-        cin>>a[i];
-       }
-       int s=0;
-       fo(i,0,n)
-       {
-        if(a[i]==1)
+        cin>>arr[i];
+     }
+     fo(i,0,n)
+     {
+        if(arr[i][0]=='O'&& arr[i][1]=='O')
         {
-           t=-1;
+           T=-1;
+           arr[i][0]='+';arr[i][1]='+';
            break;
         }
-        else
+        else if(arr[i][3]=='O'&& arr[i][4]=='O')
         {
-            s+=a[i]-2;
+           T=-1;
+           arr[i][3]='+';arr[i][4]='+';
+           break;
         }
-       }
-       if(t==-1||s%2!=0)
-       cout<<"CHEF"<<endl;
-       else
-       {
-         cout<<"CHEFINA"<<endl;
-       }
-
-
      }
-     
+     if(T==-1)
+     {
+        cout<<"YES"<<endl;
+          fo(i,0,n)
+     {
+        cout<<arr[i]<<endl;
+     }
+     }
+     else
+     {
+       cout<<"NO"<<endl;
+     }
+   
   return 0;
 }
